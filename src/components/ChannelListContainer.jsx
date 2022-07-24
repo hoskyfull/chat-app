@@ -21,9 +21,20 @@ const SideBar = () => (
   </div>
 )
 
+const ChatHeader = () => (
+  <div className='channel-list__title'>
+    <p className='channel-list__header__text'> Quaint Chat </p>
+  </div>
+)
+
 const ChannelListContainer = () => {
   return (
-    <div>ChannelListContainer</div>
+    <>
+      <SideBar />
+      <div className='channel-list__list__wrapper'>
+        <ChatHeader />
+      </div>
+    </>
   )
 }
 

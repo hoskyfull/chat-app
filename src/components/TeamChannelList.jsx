@@ -30,6 +30,7 @@ const TeamChannelList = ({ children, error = false, loading, type }) => {
         </p>
         {/* Button - add channel */}
       </div>
+      {children}
     </div>
   );
 };

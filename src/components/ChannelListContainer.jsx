@@ -1,35 +1,33 @@
-import React from 'react';
-import { ChannelList, useChatContext  } from 'stream-chat-react';
-import { ChannelSearch, TeamChannelList, TeamChannelPreview } from 'stream-chat-react';
-import Cookies from 'universal-cookie';
-import Quaint from '../assets/q.png'
-import LogOutIcon from '../assets/logout.png'
+import React from "react";
+import { ChannelList, useChatContext } from "stream-chat-react";
+import { ChannelSearch, TeamChannelList, TeamChannelPreview } from "./";
+import Cookies from "universal-cookie";
+import Quaint from "../assets/q.png";
+import LogOutIcon from "../assets/logout.png";
 
 //here I will create the side bar of the page
 const SideBar = () => (
-  <div className = "channel-list__sidebar">
-    <div className='channel-list__sidebar__icon1'>
-      <div className='icon__inner'>
-
+  <div className="channel-list__sidebar">
+    <div className="channel-list__sidebar__icon1">
+      <div className="icon__inner">
         {/* the name of the app is called Quaint */}
-        <img src={Quaint} alt='Quaint' width="30" />
+        <img src={Quaint} alt="Quaint" width="30" />
       </div>
-    </div> 
+    </div>
     {/* created the logout button */}
-    <div className='channel-list__sidebar__icon2'>
-      <div className='icon__inner'>
-        <img src={LogOutIcon } alt='Logout' width="30" />
+    <div className="channel-list__sidebar__icon2">
+      <div className="icon__inner">
+        <img src={LogOutIcon} alt="Logout" width="30" />
       </div>
-    </div> 
-
+    </div>
   </div>
-)
+);
 
 const ChatHeader = () => (
-  <div className='channel-list__title'>
-    <p className='channel-list__header__text'> Quaint Chat </p>
+  <div className="channel-list__title">
+    <p className="channel-list__header__text"> Quaint Chat </p>
   </div>
-)
+);
 
 const ChannelListContainer = () => {
   return (
@@ -39,17 +37,13 @@ const ChannelListContainer = () => {
         <ChatHeader />
         <ChannelSearch />
         <ChannelList
-            filters={{}}
-            channelRenderFilterFn={() => {}}
-            List= {(listProps)=> (
-              <TeamChannelList
-                { ...listProps}
-              />
-            )}
+          filters={{}}
+          channelRenderFilterFn={() => {}}
+          List={(listProps) => <TeamChannelList {...listProps} type="team" />}
         />
       </div>
     </>
   );
 };
 
-export default ChannelListContainer
+export default ChannelListContainer;

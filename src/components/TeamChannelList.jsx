@@ -15,15 +15,23 @@ const TeamChannelList = ({ children, error = false, loading, type }) => {
   if (loading) {
     return (
       <div className="team-channel-list">
-        <p className="team-channel-list__message">
-          Connection error, please wait a moment and try again.
+        <p className="team-channel-list__message loading">
+          {type === "team" ? "channels" : "messages"} loading...
         </p>
       </div>
     );
   }
 
-  return;
-  <div>TeamChannelList</div>;
+  return (
+    <div className="team-chanel-list">
+      <div className="team-channel-list__header">
+        <p className="team-channel-list__header__title">
+          {type === "team" ? "channels" : "Direct Messages"} loading...
+        </p>
+        {/* Button - add channel */}
+      </div>
+    </div>
+  );
 };
 
 export default TeamChannelList;

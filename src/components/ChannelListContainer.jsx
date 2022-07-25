@@ -38,6 +38,15 @@ const ChannelListContainer = () => {
       <div className="channel-list__list__wrapper">
         <ChatHeader />
         <ChannelSearch />
+        <ChannelList
+            filters={{}}
+            channelRenderFilterFn={() => {}}
+            List= {(listProps)=> (
+              <TeamChannelList
+                { ...listProps}
+              />
+            )}
+        />
       </div>
     </>
   );

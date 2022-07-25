@@ -7,7 +7,7 @@ import LogOutIcon from '../assets/logout.png'
 
 //here I will create the side bar of the page
 const SideBar = () => (
-  <div className = "channel-list__sidebar ">
+  <div className = "channel-list__sidebar">
     <div className='channel-list__sidebar__icon1'>
       <div className='icon__inner'>
 
@@ -37,6 +37,7 @@ const ChannelListContainer = () => {
       <SideBar />
       <div className="channel-list__list__wrapper">
         <ChatHeader />
+        <ChannelSearch />
       </div>
     </>
   );

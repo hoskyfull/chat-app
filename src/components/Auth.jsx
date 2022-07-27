@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
-import signinImage from "../assets/signup.jpeg";
+import signinImage from "../assets/signin.jpeg";
+
+const initialState = {
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    phoneNumber: "",
+    avatarURL: "",
+};
 
 const Auth = () => {
+    const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(true);
 
     const handleChange = () => {};
@@ -102,6 +112,9 @@ const Auth = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="auth__form-container_image">
+                <img src={signinImage} alt="sign in" />
             </div>
         </div>
     );

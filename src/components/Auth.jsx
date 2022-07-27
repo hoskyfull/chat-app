@@ -80,6 +80,20 @@ const Auth = () => {
                                 />
                             </div>
                         )}
+                        <div className="auth__form-container_fields-content_input">
+                            <label htmlFor="password">
+                                Password
+                            </label>
+                            <input
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                                onChange={
+                                    handleChange
+                                }
+                                required
+                            />
+                        </div>
                     </form>
                 </div>
             </div>

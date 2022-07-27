@@ -26,19 +26,20 @@ const TeamChannelPreview = ({ channel, type }) => {
       </div>
     );
   };
-  return;
-  <div
-    className={
-      channel?.id === activateChannel?.id
-        ? "channel-preview__wrapper__selected"
-        : "channel-preview__wrapper"
-    }
-    onClick={() => {
-      console.log(channel);
-    }}
-  >
-    {type === "team" ? <ChannelPreview /> : <ChannelPreview />}
-  </div>;
+  return (
+    <div
+      className={
+        channel?.id === activateChannel?.id
+          ? "channel-preview__wrapper__selected"
+          : "channel-preview__wrapper"
+      }
+      onClick={() => {
+        console.log(channel);
+      }}
+    >
+      {type === "team" ? <ChannelPreview /> : <ChannelPreview />}
+    </div>
+  );
 };
 
 export default TeamChannelPreview;

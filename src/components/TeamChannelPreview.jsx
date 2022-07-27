@@ -8,6 +8,10 @@ const TeamChannelPreview = ({ channel, type }) => {
       # {channel?.data?.name || channel?.data?.id}
     </p>
   );
+
+  const DirectPreview = () => (
+    const members = channel.state.members
+  )
   return <div>TeamChannelPreview</div>;
 };
 

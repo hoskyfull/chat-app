@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const StreamChat = require("stream-chat");
 const crypto = require("crypto");
 
+// This information has to stay private!! create a git ignore for the .env file
 const api_key = process.env.STREAM_API_KEY;
 const api_secret = process.env.STREAM_API_SECRET;
 const api_id = process.env.STREAM_API_ID;

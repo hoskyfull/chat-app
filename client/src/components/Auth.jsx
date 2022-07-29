@@ -24,8 +24,10 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // once onSubmit action happens we get this data from the form
         const { fullName, username, password, phoneNumber, avatarURL } = form;
         const URL = "http://localhost:8000/auth";
+        // here I submit the data to the back end
         const {
             data: { token, userId, hashedPassword },
         } = await axios.post(`${URL}/${isSignup ? "signup" : "login"}`, {
@@ -35,7 +37,7 @@ const Auth = () => {
             phoneNumber,
             avatarURL,
         });
-
+        // we will store information submitted into cookies
         cookies.set("token", token);
         cookies.set("username", username);
         cookies.set("fullName", fullName);
@@ -46,7 +48,9 @@ const Auth = () => {
             cookies.set("avatarURL", avatarURL);
             cookies.set("hashedPassword", hashedPassword);
         }
-
+        // why do a reload? This will reload the application
+        //which would make the auth token to be filled
+        //menaing, it willnot hit auth again.
         window.location.reload();
     };
 

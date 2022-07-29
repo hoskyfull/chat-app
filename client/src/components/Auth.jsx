@@ -3,6 +3,8 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import signinImage from "../assets/signin.jpeg";
 
+const cookies = new Cookies();
+
 const initialState = {
     fullName: "",
     username: "",
@@ -24,10 +26,20 @@ const Auth = () => {
         e.preventDefault();
         const { fullName, username, password, phoneNumber, avatarURL } = form;
         const URL = "http://localhost:8000/auth";
-        const { data } = await axios.post(
-            `${URL}/${isSignup ? "signup" : "login"}`,
-            { username, password, fullName, phoneNumber, avatarURL }
-        );
+        const {
+            data: { token, userId, hashedPassword },
+        } = await axios.post(`${URL}/${isSignup ? "signup" : "login"}`, {
+            username,
+            password,
+            fullName,
+            phoneNumber,
+            avatarURL,
+        });
+
+        cookies.set("token", token);
+        cookies.set("username", username);
+        cookies.set("fullName", fullName);
+        cookies.set("userId", userId);
     };
 
     const switchMode = () => {

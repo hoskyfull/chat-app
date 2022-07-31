@@ -31,7 +31,15 @@ const ChatHeader = () => (
     </div>
 );
 
-const ChannelListContainer = ({
+const customChannelTeamFilter = (channels) => {
+    return channels.filter((channel) => channel.type === "team");
+};
+
+const customChannelMessagingFilter = (channels) => {
+    return channels.filter((channel) => channel.type === "messaging");
+};
+
+const ChannelListContent = ({
     isCreating,
     setIsCreating,
     setCreateType,
@@ -58,7 +66,7 @@ const ChannelListContainer = ({
                 <ChannelSearch />
                 <ChannelList
                     filters={{}}
-                    channelRenderFilterFn={() => {}}
+                    channelRenderFilterFn={customChannelTeamFilter}
                     List={(listProps) => (
                         <TeamChannelList
                             {...listProps}
@@ -76,7 +84,7 @@ const ChannelListContainer = ({
                 />
                 <ChannelList
                     filters={{}}
-                    channelRenderFilterFn={() => {}}
+                    channelRenderFilterFn={customChannelMessagingFilter}
                     List={(listProps) => (
                         <TeamChannelList
                             {...listProps}
@@ -100,4 +108,4 @@ const ChannelListContainer = ({
     );
 };
 
-export default ChannelListContainer;
+export default ChannelListContent;

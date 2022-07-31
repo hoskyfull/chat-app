@@ -1,37 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { StreamChat } from "stream-chat";
-import { ChannelList, Chat } from "stream-chat-react";
+import { Chat } from "stream-chat-react";
 import Cookies from "universal-cookie";
-import { ChannelContainer, ChannelListContainer, Auth } from "./components";
+
+import { ChannelListContainer, ChannelContainer, Auth } from "./components";
+
+import "stream-chat-react/dist/css/index.css";
 import "./App.css";
 
 const cookies = new Cookies();
 
-const api_key = process.env.API_KEY;
+const apiKey = "v7dd66cx9u6g";
 const authToken = cookies.get("token");
 
-const client = StreamChat.getInstance(api_key);
+const client = StreamChat.getInstance(apiKey);
 
 if (authToken) {
-    client.connectUser({
-        id: cookies.get("userId"),
-        token: cookies.get("token"),
-        username: cookies.get("username"),
-        fullName: cookies.get("fullName"),
-        phoneNumber: cookies.get("phoneNumber"),
-        avatarURL: cookies.get("avatarURL"),
-        hashedPassword: cookies.get("hashedPassword"),
-    });
+    client.connectUser(
+        {
+            id: cookies.get("userId"),
+            name: cookies.get("username"),
+            fullName: cookies.get("fullName"),
+            image: cookies.get("avatarURL"),
+            hashedPassword: cookies.get("hashedPassword"),
+            phoneNumber: cookies.get("phoneNumber"),
+        },
+        authToken
+    );
 }
 
 const App = () => {
+    const [createType, setCreateType] = useState("");
+    const [isCreating, setIsCreating] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+
     if (!authToken) return <Auth />;
 
     return (
         <div className="app__wrapper">
             <Chat client={client} theme="team light">
-                <ChannelListContainer />
-                <ChannelContainer />
+                <ChannelListContainer
+                    isCreating={isCreating}
+                    setIsCreating={setIsCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
+                />
+                <ChannelContainer
+                    isCreating={isCreating}
+                    setIsCreating={setIsCreating}
+                    isEditing={isEditing}
+                    setIsEditing={setIsEditing}
+                    createType={createType}
+                />
             </Chat>
         </div>
     );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
+
 import signinImage from "../assets/signin.jpeg";
 
 const cookies = new Cookies();
@@ -24,20 +25,21 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // once onSubmit action happens we get this data from the form
-        const { fullName, username, password, phoneNumber, avatarURL } = form;
-        const URL = "http://localhost:8000/auth";
-        // here I submit the data to the back end
+
+        const { username, password, phoneNumber, avatarURL } = form;
+
+        const URL = "http://localhost:8000/auth/";
+
         const {
-            data: { token, userId, hashedPassword },
+            data: { token, userId, hashedPassword, fullName },
         } = await axios.post(`${URL}/${isSignup ? "signup" : "login"}`, {
             username,
             password,
-            fullName,
+            fullName: form.fullName,
             phoneNumber,
             avatarURL,
         });
-        // we will store information submitted into cookies
+
         cookies.set("token", token);
         cookies.set("username", username);
         cookies.set("fullName", fullName);
@@ -48,9 +50,7 @@ const Auth = () => {
             cookies.set("avatarURL", avatarURL);
             cookies.set("hashedPassword", hashedPassword);
         }
-        // why do a reload? This will reload the application
-        //which would make the auth token to be filled
-        //menaing, it willnot hit auth again.
+
         window.location.reload();
     };
 
@@ -62,13 +62,13 @@ const Auth = () => {
         <div className="auth__form-container">
             <div className="auth__form-container_fields">
                 <div className="auth__form-container_fields-content">
-                    <p>{isSignup ? "Sing Up" : "Sign In"}</p>
+                    <p>{isSignup ? "Sign Up" : "Sign In"}</p>
                     <form onSubmit={handleSubmit}>
                         {isSignup && (
                             <div className="auth__form-container_fields-content_input">
                                 <label htmlFor="fullName">Full Name</label>
                                 <input
-                                    name="name"
+                                    name="fullName"
                                     type="text"
                                     placeholder="Full Name"
                                     onChange={handleChange}
@@ -81,7 +81,7 @@ const Auth = () => {
                             <input
                                 name="username"
                                 type="text"
-                                placeholder="username"
+                                placeholder="Username"
                                 onChange={handleChange}
                                 required
                             />
@@ -144,9 +144,9 @@ const Auth = () => {
                         <p>
                             {isSignup
                                 ? "Already have an account? "
-                                : "Don't have an account"}
+                                : "Don't have an account? "}
                             <span onClick={switchMode}>
-                                {isSignup ? "Sign In" : "Sign up"}
+                                {isSignup ? "Sign In" : "Sign Up"}
                             </span>
                         </p>
                     </div>

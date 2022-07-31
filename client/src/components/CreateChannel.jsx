@@ -27,6 +27,27 @@ const CreateChannel = ({ createType, setIsCreating }) => {
     const { client, setActiveChannel } = useChatContext();
     const [selectedUsers, setSelectedUsers] = useState([client.userID || ""]);
     const [channelName, setChannelName] = useState("");
+
+    const createChannel = async (e) => {
+        e.preventDefault();
+
+        try {
+            const newChannel = await client.channel(createType, channelName, {
+                name: channelName,
+                members: selectedUsers,
+            });
+
+            await newChannel.watch();
+
+            setChannelName("");
+            setIsCreating(false);
+            setSelectedUsers([client.userID]);
+            setActiveChannel(newChannel);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div>
             <ChannelNameInput />

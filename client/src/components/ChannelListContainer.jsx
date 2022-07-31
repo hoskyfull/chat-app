@@ -78,7 +78,15 @@ const ChannelListContainer = ({
                     filters={{}}
                     channelRenderFilterFn={() => {}}
                     List={(listProps) => (
-                        <TeamChannelList {...listProps} type="messaging" />
+                        <TeamChannelList
+                            {...listProps}
+                            type="messaging"
+                            isCreating={isCreating}
+                            setIsCreating={setIsCreating}
+                            setCreateType={setCreateType}
+                            setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
+                        />
                     )}
                     Preview={(previewProps) => (
                         <TeamChannelPreview

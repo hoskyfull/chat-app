@@ -108,4 +108,12 @@ const ChannelListContent = ({
     );
 };
 
+const ChannelListContainer = ({
+    setCreateType,
+    setIsCreating,
+    setIsEditing,
+}) => {
+    const [toggleContainer, setToggleContainer] = useState(false);
+};
+
 export default ChannelListContent;

@@ -31,7 +31,13 @@ const ChatHeader = () => (
     </div>
 );
 
-const ChannelListContainer = () => {
+const ChannelListContainer = ({
+    isCreating,
+    setIsCreating,
+    setCreateType,
+    setIsEditing,
+    setToggleContainer,
+}) => {
     const logout = () => {
         cookies.remove("token");
         cookies.remove("userId");
@@ -54,14 +60,15 @@ const ChannelListContainer = () => {
                     filters={{}}
                     channelRenderFilterFn={() => {}}
                     List={(listProps) => (
-                        <TeamChannelList {...listProps} 
+                        <TeamChannelList
+                            {...listProps}
                             type="team"
                             isCreating={isCreating}
                             setIsCreating={setIsCreating}
-                            setCreateType={setCreateType} 
+                            setCreateType={setCreateType}
                             setIsEditing={setIsEditing}
                             setToggleContainer={setToggleContainer}
-                        /> />
+                        />
                     )}
                     Preview={(previewProps) => (
                         <TeamChannelPreview {...previewProps} type="team" />

@@ -23,7 +23,10 @@ const ChannelNameInput = ({ channelName = "", setChannelName }) => {
     );
 };
 
-const CreateChannel = () => {
+const CreateChannel = ({ createType, setIsCreating }) => {
+    const { client, setActiveChannel } = useChatContext();
+    const [selectedUsers, setSelectedUsers] = useState([client.userID || ""]);
+    const [channelName, setChannelName] = useState("");
     return (
         <div>
             <ChannelNameInput />

@@ -28,8 +28,8 @@ const Auth = () => {
 
         const { username, password, phoneNumber, avatarURL } = form;
 
-        // const URL = "http://quaint-chat.herokuapp.com/auth";
-        const URL = "http://localhost:8000/auth";
+        const URL = "http://quaint-chat.herokuapp.com/auth";
+        // const URL = "http://localhost:8000/auth";
 //adding a comment for ppushing
         const {
             data: { token, userId, hashedPassword, fullName },

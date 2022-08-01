@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+Quaint Chat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+URL: https://quaints.netlify.app/
+
+<img src='client/public/quaintdashboard.png'/>
 
 ## Available Scripts
 

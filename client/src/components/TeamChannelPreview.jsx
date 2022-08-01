@@ -47,6 +47,7 @@ const TeamChannelPreview = ({
                 setIsCreating(false);
                 setIsEditing(false);
                 setActiveChannel(channel);
+
                 if (setToggleContainer) {
                     setToggleContainer((prevState) => !prevState);
                 }

@@ -1,10 +1,6 @@
-Quaint Chat
+# Quaint Chat
 
 URL: https://quaints.netlify.app/
-
-<img src='client/public/quaintdashboard.png'/>
-
-
 
 Quaint CHat is a platform where people gather to chat, share ideas and just hang out. This is a Full-Stack Application where You will be able to add, edit and delete messages. THe user will be able to create new channels, react to messages and even reply to messages. The server side is deployed through Heroky and the frontend through Netlify.
 
@@ -51,3 +47,9 @@ Install within SERVER folder (run 'npm init -y' within this folder first before 
 - [ ] Create User Profile 
 - [ ] Add SMS funtionality with Twilio
 - [x] Improve CSS 
+
+## Images 🌄
+
+<img src='client/public/quaintdashboard.png'/>
+<img src='client/public/quaintsinup.png'/>
+<img src='client/public/quaintlogin.png'/>

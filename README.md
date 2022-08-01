@@ -41,15 +41,16 @@ Install within SERVER folder (run 'npm init -y' within this folder first before 
 - stream-chat 
 - nodemon 
 - cors
-## Ice Box 🧊
-
-- [ ] Delete Channels
-- [ ] Create User Profile 
-- [ ] Add SMS funtionality with Twilio
-- [x] Improve CSS 
 
 ## Images 🌄
 
 <img src='client/public/quaintdashboard.png'/>
 <img src='client/public/quaintsinup.png'/>
 <img src='client/public/quaintlogin.png'/>
+
+## Ice Box 🧊
+
+- [ ] Delete Channels
+- [ ] Create User Profile 
+- [ ] Add SMS funtionality with Twilio
+- [x] Improve CSS 

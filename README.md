@@ -2,7 +2,7 @@
 
 URL: https://quaints.netlify.app/
 
-Quaint CHat is a platform where people gather to chat, share ideas and just hang out. This is a Full-Stack Application where You will be able to add, edit and delete messages. THe user will be able to create new channels, react to messages and even reply to messages. The server side is deployed through Heroky and the frontend through Netlify.
+Quaint Chat is a platform where people gather to chat, share ideas and just hang out. This is a Full-Stack Application where You will be able to add, edit and delete messages. THe user will be able to create new channels, react to messages and even reply to messages. The server side is deployed through Heroky and the frontend through Netlify. This is part of my Capstone project for General Assembly's Software Engineer Bootcamp.
 
 ## If cloned
 

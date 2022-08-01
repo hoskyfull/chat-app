@@ -33,7 +33,7 @@ const Auth = () => {
 //adding a comment for ppushing
         const {
             data: { token, userId, hashedPassword, fullName },
-        } = await axios.post(`${URL}/${isSignup ? "signup" : "login"}`, {
+        } = await axios.post(`${URL}${isSignup ? "signup" : "login"}`, {
             username,
             password,
             fullName: form.fullName,

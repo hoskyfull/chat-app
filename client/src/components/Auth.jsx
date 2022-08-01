@@ -29,6 +29,7 @@ const Auth = () => {
         const { username, password, phoneNumber, avatarURL } = form;
 
         const URL = "https://quaint-chat.herokuapp.com/auth";
+        // const URL = "https://localhost:8000/auth";
 
         const {
             data: { token, userId, hashedPassword, fullName },

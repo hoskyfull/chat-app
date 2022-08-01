@@ -30,7 +30,7 @@ const Auth = () => {
 
         const URL = "http://quaint-chat.herokuapp.com/auth";
         // const URL = "http://localhost:8000/auth";
-//adding a comment for ppushing
+//adding a comment for ppushingg
         const {
             data: { token, userId, hashedPassword, fullName },
         } = await axios.post(`${URL}${isSignup ? "signup" : "login"}`, {

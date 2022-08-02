@@ -53,4 +53,4 @@ Install within SERVER folder (run 'npm init -y' within this folder first before 
 - [ ] Delete Channels
 - [ ] Create User Profile 
 - [ ] Add SMS funtionality with Twilio
-- [x] Improve CSS 
+- [x] Improve CSS ]

@@ -6,41 +6,39 @@ Quaint Chat is a platform where people gather to chat, share ideas and just hang
 
 ## If cloned
 
-Make sure to do 'npm install' within client and server folder and not in the root directory. 
-
+Make sure to do 'npm install' within client and server folder and not in the root directory.
 
 ## Technologies used 💾
 
-- React
-- Javascript
-- HTML
-- CSS
-- GetStream.io
-- Heroku
-- Netlify
-
+-   React
+-   Javascript
+-   HTML
+-   CSS
+-   GetStream.io
+-   Heroku
+-   Netlify
 
 ## Dependencies required 🔖
 
 Install using 'npm install'
 
-
 Install within CLIENT folder
-- stream-chat
-- stream-chat-react
-- universal-cookies
-- axios
+
+-   stream-chat
+-   stream-chat-react
+-   universal-cookies
+-   axios
 
 Install within SERVER folder (run 'npm init -y' within this folder first before installing dependencies)
 
-- bycrypt 
-- crypto 
-- dotenv 
-- express 
-- getstream 
-- stream-chat 
-- nodemon 
-- cors
+-   bycrypt
+-   crypto
+-   dotenv
+-   express
+-   getstream
+-   stream-chat
+-   nodemon
+-   cors
 
 ## Images 🌄
 
@@ -50,7 +48,8 @@ Install within SERVER folder (run 'npm init -y' within this folder first before 
 
 ## Ice Box 🧊
 
-- [ ] Delete Channels
-- [ ] Create User Profile 
-- [ ] Add SMS funtionality with Twilio
-- [x] Improve CSS ]
+-   [ ] Delete Channels
+-   [ ] Create User Profile
+-   [ ] Add SMS funtionality with Twilio
+-   [x] Improve CSS ]
+-   [ ] Create landing page after login
